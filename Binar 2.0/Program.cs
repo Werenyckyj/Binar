@@ -24,26 +24,31 @@ namespace Binar_2._0
         }
         public static void LoadIntArray()
         {
+            int numOfGeneration = 0;
+            int numOfBadGeneration = 0;
             for (int i = 0; i < numbers.Length; i++)
             {
-                int n = rc.Next(100000);
+                int n = rc.Next(20000);
                 if (numbers.Contains<int>(n))
                 {
                     i--;
+                    numOfGeneration++;
+                    numOfBadGeneration++;
                 }
                 else
                 {
                     numbers[i] = n;
                     Console.WriteLine($"Číslo {n} přidáno");
+                    numOfGeneration++;
                 }
             }
             Array.Sort(numbers);
-            Console.WriteLine("Vygenerováno pole o velikosti " + numbers.Length);
+            Console.WriteLine("Vygenerováno pole o velikosti " + numbers.Length + ". Vygenerovalo se " + numOfGeneration + " čísel, z toho bylo "+ numOfBadGeneration+" duplicitních.");
         }
         static void FindIndexOf(int find, int[] array, int from, int to)
         {
             int halfOfArray = 0;
-            if (find > 100000 || find <= 0)
+            if (find > 20000 || find <= 0)
             {
                 Console.WriteLine("Číslo není v poli");
                 return;
