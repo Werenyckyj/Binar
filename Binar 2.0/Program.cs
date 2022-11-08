@@ -44,6 +44,7 @@ namespace Binar_2._0
             }
             Array.Sort(numbers);
             Console.WriteLine("Vygenerováno pole o velikosti " + numbers.Length + ". Vygenerovalo se " + numOfGeneration + " čísel, z toho bylo "+ numOfBadGeneration+" duplicitních.");
+            Console.WriteLine($"Rozsah čísel: 1 - 20000");
         }
         static void FindIndexOf(int find, int[] array, int from, int to)
         {
